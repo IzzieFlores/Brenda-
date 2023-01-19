@@ -1,0 +1,38 @@
+body{
+    /* border: 2px outset black; */
+    padding: 2%;
+    width: 980px;
+    margin: 0 auto;
+    background-color: bisque;
+    font-family: cursive;
+}
+
+.container-flex{ 
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.field-input, .textarea{
+    border-radius: 6px;
+    margin: 0 0.5em 1em 0;
+    padding: .5em 1em;
+}
+
+.field-input{
+    flex: 40%;
+}
+
+.textarea{
+    border: 2px outset black;
+    width: 100%;
+}
+
+.buton{
+    border: 2px outset black;
+    border-radius: 10px;
+    background-color: beige;
+    font-size: 15px;
+    font-family: monospace;
+
+}

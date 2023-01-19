@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="CSS/stylo.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Codificador y Decodificador</h1> <hr> <br><br>
+    </header>
+
+    <main>
+        <label for="mensaje">Mensaje:</label>
+        <input type="text" id="mensaje"> <br><br>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" name="" id="password">
+        <br><br>
+
+        <button onclick="encriptar()">Enviar</button>
+        <br><br> <hr> <br>
+
+        <label for="msjEncrip">Mensaje Encriptado:</label>
+        <span id="msjEncrip"></span>
+        <br><br>
+
+        <label for="msgCodigo">Código mensaje:</label>
+        <input type="text" id="msgCodigo">
+        <br><br>
+
+        <button onclick="desencriptar()">Desencriptar</button>
+        <br><br> <hr> <br>
+
+        <label for="msjReal">Mensaje Real</label>
+        <span id="msjReal"></span>
+        <br><br>
+
+        <span id="error" class="alerta"></span>
+
+
+    </main>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

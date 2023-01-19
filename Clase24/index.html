@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto2</title>
+    <link rel="stylesheet" href="CSS/stylo.css">
+</head>
+<body>
+    <header>
+        <h1>Codificador y Decodificador</h1> <hr><br><br>
+    </header>
+
+    <main>  
+        <h2>¿Qué es un Codificador?</h2>
+
+        <p>Un codificador es un circuito combinacional con 2N entradas y N salidas, cuya misión es presentar en la salida el código binario correspondiente a la entrada activada.
+        Existen dos tipos fundamentales de codificadores: codificadores sin prioridad y codificadores con prioridad. En el caso de codificadores sin prioridad, puede darse el caso de salidas cuya entrada no pueda ser conocida: por ejemplo, la salida 0 podría indicar que no hay ninguna entrada activada o que se ha activado la entrada número 0. Además, ciertas entradas pueden hacer que en la salida se presente la suma lógica de dichas entradas, ocasionando mayor confusión. Por ello, este tipo de codificadores es usado únicamente cuando el rango de datos de entrada está correctamente acotado y su funcionamiento garantizado.</p>
+
+        <label for="nombre"></label>
+        <input type="text" name=" " id="nombre" placeholder="Ingrese su Nombre" class="nom"> <br>
+        
+        <label for="password"></label>
+        <input type="password" name="" id="password" placeholder="Ingrese contraseña" class="nom">
+
+        <button onclick="otrapagina()" class="nomb">Ingresar</button>
+        <span id="Error" class="alerta"></span> <br><br>
+
+        <!-- <label for="crear-cuenta">Crear Cuen ta</label> -->
+        <!-- <input type="text" name="" id="crear-cuenta"> --> 
+
+        <a href="index5.html" class="de">Crear Cuenta</a>
+    
+    </main>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

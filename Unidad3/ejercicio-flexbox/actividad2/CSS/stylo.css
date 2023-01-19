@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /* border: 2px outset black; */
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+.blog{
+    background-color: rgb(1, 48, 1);
+    padding: 100px 30px;
+}
+
+.blog h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.flex-padre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-hijo{
+    /* border: 2px outset black; */
+    margin: 5px;
+    width: 350px;
+    padding: 15px;
+}
+
+.info{
+    padding: 15px;
+    background-color: white;
+}

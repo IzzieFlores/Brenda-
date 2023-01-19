@@ -1,0 +1,59 @@
+.alerta{
+    color:  red;
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+    /* margin: 400px; */
+
+}
+
+body{
+    background-image: url(../../imagenes/concepto-del-desarrollo-de-la-programación-web-73959563.jpg);
+    margin: 40px;
+    padding: 10px;
+}
+
+h1{
+    font-family: cursive;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    
+}
+
+p{
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.bb{
+    font-family: monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
+label{
+    font-family: monospace;
+    font-size: 15px;
+    text-align: justify;
+    color: blue;
+
+}
+
+.encrip{
+    font-family: 'Indie Flower', cursive;
+    border-radius: 6px;
+    border: 2px outset black;
+    padding: 5px;
+    margin: 5px;
+    text-align: center, left;
+}
+
+.desencrip{
+font-family: 'Indie Flower', cursive;
+border-radius: 6px;
+border: 2px outset black;
+padding: 5px;
+margin: 5px;
+text-align: center, left;
+}
