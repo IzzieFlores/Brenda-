@@ -10,18 +10,15 @@ function otrapagina() {
    
     localStorage.setItem("abc", nombreUsser);
     
-
-
     if (PasswordSistema == password && usuario == nombreUsser) {
- 
-        document.getElementById("Error").innerHTML = " ";
         location.href="index2.html";
+
+        document.getElementById("Error").innerHTML = " ";
 
     } else {
     
         document.getElementById("Error").innerHTML = mensajeError;
         document.getElementById("Error").className = "alerta";
-       
-
+        
     }
 }
