@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <h1>Componentes de Bootstrap</h1>
+    </header>
+
+    <main class="container">
+        <!-- <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul> -->
+
+
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Inicio</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Sobre
+                    Nosotros</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contactos</button>
+            </li>
+            <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+        </li> -->
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo eligendi aliquam at,
+                omnis quisquam neque delectus nam, voluptas sit, in vel iure esse magni. Exercitationem impedit minima
+                amet cumque quisquam?</div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima quos, consequuntur dolore impedit
+                quia omnis facilis nesciunt deleniti illum vitae voluptates, quas minus neque. Facere voluptatum minima
+                tenetur exercitationem.</div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam corrupti temporibus est labore!
+                Tenetur assumenda, quasi corporis recusandae non aut tempore voluptas maxime veniam quis sapiente,
+                impedit ipsam consequatur ducimus!</div>
+            <!-- <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div> -->
+        </div>
+        <hr>
+
+        <h3>Popovers</h3> <br><br><br><br>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-lg btn-danger" data-bs-placement="top " data-bs-toggle="popover"
+                data-bs-title="HTML" data-bs-content="Es un lenguaje de maquetación para páginas web"
+                data-bs-container="body">
+                HTML
+            </button>
+
+
+            <button type="button" class="btn btn-info" data-bs-toggle="popover" data-bs-title="JavaScript"
+                data-bs-content="Es un lenguaje de programación para dar funciones" data-bs-container="body"
+                data-bs-placement="bottom">
+                JavaScript
+            </button>
+
+            <button type="button" class="btn btn-close-white" data-bs-placement="top" data-bs-toggle="popover"
+                data-bs-title="CSS"
+                data-bs-content="Es un lenguaje que maneja el diseño y presentación de las páginas web">
+                CSS
+            </button>
+        </div>
+
+        <h3>Bordes</h3>
+        <div class="d-flex justify-content-between ">
+            <div class="border p-5"></div>
+            <div class="border p-5 border-danger"></div>
+            <div class="border p-5 border-primary "></div>
+            <div class="border p-5 border-info "></div>
+            <div class="border p-5 border-warning"></div>
+            <div class="border p-5 border-success"></div>
+            <div class="border p-5 border-light"></div>
+        
+
+        <h3>Sombras</h3>
+        <div class="d-flex justify-content-between ">
+
+            <div class="border p-5  shadow-none "></div>
+            <div class="border p-5  shadow-sm p-3 mb-5 bg-body-tertiary rounded"></div>
+            <div class="border p-5 shadow p-3 mb-5 bg-body-tertiary rounded"></div>
+            <div class="border p-5  shadow-lg p-3 mb-5 bg-body-tertiary rounded"></div>
+        </div>
+
+            <h3>Sistemas de Grillas</h3>
+    </main>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
