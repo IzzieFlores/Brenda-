@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceviche de Pescado</title>
-    <link rel="stylesheet" href="CSS/stylos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="CSS/stylos.css"> -->
 </head>
-<body>
+
+<body class="bg-success p-2 text-dark bg-opacity-25">
+    <div>
+        <nav class="navbar navbar-expand-lg  p-3 mb-2 bg-danger text-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/descarga__1_3-removebg-preview.png" alt="Bootstrap" width="50">
+                </a>
+                <a class="navbar-brand text-white" href="#">Gastronomía Peruana</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page"
+                                href="Blog de Recetas.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Recetas</a>
+                        </li>
+
+        </nav>
+    </div>
+
     <header>
-        <h1>Receta del Ceviche de Pescado</h1>
+        <h1 class="text-center font-monospace fs-1">Receta del Ceviche de Pescado</h1>
     </header>
 
     <main>
-        <h3>Ingredientes:</h3>
+        <h3 class="text-center font-monospace fs-3">Ingredientes:</h3>
         <ul>
-            <li>1 kilo de pescado de carne suave y firme (ojo de uva, tollo, corvina, mero)</li>
-            <li>½ kilo de limones peruanos, extraer el jugo</li>
-            <li>3 dientes de ajo molidos (no exagerar ya que su sabor es fuerte)</li>
-            <li>4 cebollas cortadas (largas)</li>
-            <li>200 gramos de rocoto molido (o ají limo)</li>
-            <li>2 ramitas de culantro picado finamente</li>
-            <li>Sal y pimienta al gusto.</li>
+            <li class="fw-semibold">1 kilo de pescado de carne suave y firme (ojo de uva, tollo, corvina, mero)</li>
+            <li class="fw-semibold">½ kilo de limones peruanos, extraer el jugo</li>
+            <li class="fw-semibold">3 dientes de ajo molidos (no exagerar ya que su sabor es fuerte)</li>
+            <li class="fw-semibold">4 cebollas cortadas (largas)</li>
+            <li class="fw-semibold">200 gramos de rocoto molido (o ají limo)</li>
+            <li class="fw-semibold">2 ramitas de culantro picado finamente</li>
+            <li class="fw-semibold">Sal y pimienta al gusto.</li>
         </ul>
 
-        <ol>
+        <h3 class="text-center font-monospace fs-3">Preparación:</h3>
+        <ol class="fw-semibold">
             <li>Cortar el pescado en rectángulos de regular proporción (1 pulgada aproximadamente).</li>
             <li>En un recipiente de vidrio verter el jugo de limón, sal, pimienta, ajo y el rocoto, revolver.</li>
             <li>Verter el jugo sobre el pescado y revolver, dejar por unos minutos.</li>
             <li>Las cebollas y el culantro se agregan al servir.</li>
         </ol>
+
+        <center>
+            <img src="img/descarga.jpg" alt="ceviche" width="300">
+        </center>
     </main>
+
+    <footer>
+        <p class="p-3 mb-2 bg-danger text-white text-center">&copy;Derechos de autor reservados | 2023</p>
+    </footer>
 </body>
+
 </html>
