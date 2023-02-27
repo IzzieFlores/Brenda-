@@ -1,31 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.:: Galeria ::.</title>
-    <link rel="stylesheet" href="assets/stylo.css">
+    <!-- <link rel="stylesheet" href="assets/stylo.css"> -->
     <!-- Query CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="CSS/stylos2.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="CSS/stylos.css"> -->
 
 </head>
-<body>
+
+<body >
 
     <header>
-        <h1>Galeria Visual</h1>
+        <nav class="nav_contenedor">
+            <div class="nav_titulo">
+                <img src="img/images-removebg-preview.png" width="150px">
+            </div>
+            <ul class="nav_ul">
+                <li class="nav_item"><a class="nav_item_link" href="index.html">Inicio</a></li>
+
+                <li class="nav_item"><a class="nav_item_link" href="pokemones.html">Pokemónes</a></li>
+                <!-- <li class="nav_item"><a class="nav_item_link" href="#"></a></li> -->
+            </ul>
+        </nav>
+        
     </header>
 
     <main>
+        <h1>POKEMONES</h1>
         <div id="imagenes-contenedor" class="flex-contenedor">
             <!-- Aqui se van agregar las imagenes d la api -->
         </div>
 
-        
+
     </main>
 
     <script src="JS/personajes.js"></script>
 </body>
+
 </html>

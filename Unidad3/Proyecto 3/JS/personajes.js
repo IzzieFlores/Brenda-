@@ -48,7 +48,7 @@ function getPic(){
 
 $(document).ready(function(){
     //Bucle que imprima en la consola un texto 9 veces con el bucle for
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 1000; i++) {
         getPic();
     }
 });

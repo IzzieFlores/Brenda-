@@ -1,3 +1,11 @@
+body{
+    background-color: rgb(44, 102, 255);
+}
+p{
+    color: white;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 30px;
+}
 .title{
     text-align: center;
 }
@@ -5,13 +13,15 @@
 .flex-contenedor{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     
 }
 
 .card{
     width: 250px;
-    border: 2px outset black;
+    border: 2px outset white;
     margin: 5px;
+
 }
 
 .card-img{
@@ -25,3 +35,50 @@
 .parrafo{
     text-align: center;
 }
+
+.nav_contenedor{
+    width: 100.5%;
+    margin-left: auto;
+    display: flex;
+    border: 3px solid rgb(83, 241, 102);
+    border-radius: 10px;
+    background-color: rgb(83, 241, 102);
+    padding: auto;
+    color: black;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+.nav_ul{
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    padding: 7px;
+    text-align: center;
+    align-items: center;
+}
+
+
+.nav_item_link{
+    text-decoration: none;
+    margin-right: 20px;
+    font-family: 'League Spartan', sans-serif;
+   font-size: 20px;
+   color: black;
+
+}
+
+.nav_titulo{
+    width: 168.404px; 
+    height: 61.9587px; 
+    transform: translate(1.42109e-14px, -0.620438px) rotate(0deg);
+    object-fit: fill;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
