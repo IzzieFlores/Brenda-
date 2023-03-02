@@ -16,21 +16,22 @@ $(document).ready(function () {
 
     //**********Registrar Usuarios*************//
     //Seleccionando el boton registrar
-    $("#register").click(function () {
+    $("#btn-register").click(function () {
         //Capturar el Email y el Password
-        let Username = $("#userName").val();
-        let Password1 = $("#Password1").val();
+        let username = $("#userName").val();
+        let password1 = $("#password").val();
 
-        //  console.log(email, password); //comprobamos si captura datos
+        //  console.log(username, password1); //comprobamos si captura datos
 
 
         //Método de firebase que registra usuarios
-        firebase.auth().createUserWithEmailAndPassword(Username, Password1)
+        firebase.auth().createUserWithEmailAndPassword(username, password1)
             .then((userCredential) => {
                 // Signed in
 
                 alert('Creaste una cuenta exitosamente');
                 // ...
+                window.location.href = "indexcopia.html"
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -51,16 +52,16 @@ $(document).ready(function () {
     $("login").click(function () {
 
         //Capturar el Email y el Password
-        let Username = $("#userName").val();
-        let Password1 = $("#Password1").val();
+        let username = $("#userName").val();
+        let password1 = $("#password").val();
 
 
-        firebase.auth().signInWithEmailAndPassword(Username, Password1)
+        firebase.auth().signInWithEmailAndPassword(username, password1)
             .then((userCredential) => {
                 // Signed in
-                // alert("Ingresaste");
+                alert("Ingresaste");
                 // ...
-                window.location.href = "home.html"
+                window.location.href = "mi-login.html";
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -77,8 +78,8 @@ $(document).ready(function () {
 
         firebase.auth().signOut().then(() => {
             // Sign-out successful.
-            window.location.href = "index.html"
+            window.location.href = "indexcopia.html"
         })
     });
 
-});
+})
