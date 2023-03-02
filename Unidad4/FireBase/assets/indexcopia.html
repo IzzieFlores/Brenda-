@@ -30,7 +30,7 @@
             <div class="input-group-text bg-info">
                 <img src="img/password-icon.svg" alt="password-icon" style="height: 1rem" />
             </div>
-            <input class="form-control bg-light" type="password" placeholder="Password" id="Password1"/>
+            <input class="form-control bg-light" type="password" placeholder="Password" id="password"/>
         </div>
         <div class="d-flex justify-content-around mt-1">
             <div class="d-flex align-items-center gap-1">
@@ -43,7 +43,8 @@
             </div>
         </div>
         <div >
-            <a href="mi-login.html" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" id="login">Login</a>  
+            <button type="button" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" id="btn-login">Login</button>
+            
         </div>
         <div class="d-flex gap-1 justify-content-center mt-1">
             <div>Don't have an account?</div>
@@ -65,6 +66,8 @@
         crossorigin="anonymous"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 

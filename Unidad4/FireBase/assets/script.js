@@ -29,17 +29,28 @@ $(document).ready(function () {
             .then((userCredential) => {
                 // Signed in
 
-                alert('Creaste una cuenta exitosamente');
-                // ...
-                window.location.href = "indexcopia.html"
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Good job!',
+                    text: 'Creaste tu cuenta exitosamente',
+                    confirmButtonText: 'ok',
+                    allowOutsideClick: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "indexcopia.html";
+                    }
+                })
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 // ..
                 console.log(errorCode, errorMessage);
-                alert('Ocurrio un error al crear tu cuenta');
-
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Ocurrio un error al crear tu cuenta',
+                })
             });
 
     });
@@ -49,7 +60,7 @@ $(document).ready(function () {
 
 
     //Ingresar con nuestro correo registrado
-    $("login").click(function () {
+    $("#btn-login").click(function () {
 
         //Capturar el Email y el Password
         let username = $("#userName").val();
@@ -59,9 +70,20 @@ $(document).ready(function () {
         firebase.auth().signInWithEmailAndPassword(username, password1)
             .then((userCredential) => {
                 // Signed in
-                alert("Ingresaste");
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Good job!',
+                    text: '¿Estás seguro que quieres ir a la siguiente página?',
+                    confirmButtonText: 'Yes',
+                    allowOutsideClick: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "mi-login.html";
+                    }
+                })
                 // ...
-                window.location.href = "mi-login.html";
+
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -69,17 +91,41 @@ $(document).ready(function () {
 
                 console.log(errorCode, errorMessage);
 
-                alert("No se pudo iniciar sesión");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'No se pudo iniciar sesión',
+                })
             });
     });
 
     //Cerrar Sesión
-    $("#salir").click(function () {
+    $("#btn-salir").click(function () {
 
         firebase.auth().signOut().then(() => {
-            // Sign-out successful.
-            window.location.href = "indexcopia.html"
-        })
-    });
 
+            Swal.fire({
+                title: '¡Alerta!',
+                text: "Seguro que quieres cerrar sesión?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href= "indexcopia.html"
+                  Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+                }
+              })
+           
+
+        })
+      
+    });
 })
+
