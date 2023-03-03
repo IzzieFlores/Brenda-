@@ -112,20 +112,54 @@ $(document).ready(function () {
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Yes, delete it!'
-              }).then((result) => {
+            }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href= "indexcopia.html"
-                  Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                  )
+                    window.location.href = "indexcopia.html"
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
                 }
-              })
-           
+            })
+
 
         })
-      
+
     });
+
+    
+    //Iniciar sesión con cuenta google
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    
+    $("#btn-google").click(function () {
+
+
+
+        firebase.auth()
+            .signInWithPopup(provider)
+            .then((result) => {
+                /** @type {firebase.auth.OAuthCredential} */
+                var credential = result.credential;
+
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                var token = credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                // ...
+                console.log(token, user);
+            }).catch((error) => {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+                console.log(errorCode, errorMessage, email, credential);
+            });
+    })
 })
 
