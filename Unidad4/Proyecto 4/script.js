@@ -163,3 +163,39 @@ $(document).ready(function () {
     })
 })
 
+// Editar y eliminar
+
+$(document).ready(function () {
+    var data, grid, dialog;
+    data = [];
+
+     dialog = $('#dialog').dialog({
+        title: 'Agregar/Editar',
+        autoOpen: false,
+        resizable: false,
+        height:250,
+        width:600,
+        modal: true
+    });
+    function Edit(e) {
+        $('#Item').val(e.data.id);
+        $('#Cantidad').val(e.data.record.Cantidad);
+        $('#unidadMedida').val(e.data.record.unidadMedida);
+        $('#descripcion').val(e.data.record.descripcion);
+        $('#condicion').val(e.data.record.condicion);
+        $('#activoFijo').val(e.data.record.activoFijo);
+        $('#dialog').dialog('open');
+        $('#button').show();
+    }
+
+    function Delete(e) {
+        if (confirm('¿esta seguro que desea eliminar este registro?')) {
+            grid.removeRow(e.data.id);
+            if(grid.count()!=0){
+                $('#button').show();
+            }else{
+                $('#button').hide();
+            }
+        }
+    }
+})
