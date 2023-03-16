@@ -14,6 +14,7 @@ $(document).ready(function () {
     const app = firebase.initializeApp(firebaseConfig);
     console.log(app);
 
+
     //**********Registrar Usuarios*************//
     //Seleccionando el boton registrar
     $("#btn-register").click(function () {
@@ -161,5 +162,7 @@ $(document).ready(function () {
                 console.log(errorCode, errorMessage, email, credential);
             });
     })
+
+
 })
 

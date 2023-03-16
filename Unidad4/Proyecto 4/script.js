@@ -14,6 +14,8 @@ $(document).ready(function () {
     const app = firebase.initializeApp(firebaseConfig);
     console.log(app);
 
+    const db = firebase.firestore();
+
     //**********Registrar Usuarios*************//
     //Seleccionando el boton registrar
     $("#btn-register").click(function () {
@@ -128,11 +130,11 @@ $(document).ready(function () {
 
     });
 
-    
+
     //Iniciar sesión con cuenta google
     var provider = new firebase.auth.GoogleAuthProvider();
 
-    
+
     $("#btn-google").click(function () {
 
 
@@ -149,7 +151,10 @@ $(document).ready(function () {
                 var user = result.user;
                 // ...
                 console.log(token, user);
+
+                window.location.href = "home.html";
             }).catch((error) => {
+
                 // Handle Errors here.
                 var errorCode = error.code;
                 var errorMessage = error.message;
@@ -161,41 +166,36 @@ $(document).ready(function () {
                 console.log(errorCode, errorMessage, email, credential);
             });
     })
+
+
+    //Agregar post
+    $("#publicar").click(function (e) {
+        e.preventDefault();
+        let am = document.getElementById("a").value;
+        
+        console.log(am);
+
+        let formu = document.getElementById("mm");
+        // console.log(formu);
+
+        // Add a new document with a generated id.
+        db.collection("hola").add({
+            texto: am,
+            
+        })
+            .then((docRef) => {
+                // console.log("Document written with ID: ", docRef.id);
+                console.log("SE GUARDO CORRECTAMENTE");
+            })
+            .catch((error) => {
+                console.error("Error adding document: ", error);
+            });
+
+            formu.reset();
+    })
+    
+
+//
+
 })
 
-// Editar y eliminar
-
-$(document).ready(function () {
-    var data, grid, dialog;
-    data = [];
-
-     dialog = $('#dialog').dialog({
-        title: 'Agregar/Editar',
-        autoOpen: false,
-        resizable: false,
-        height:250,
-        width:600,
-        modal: true
-    });
-    function Edit(e) {
-        $('#Item').val(e.data.id);
-        $('#Cantidad').val(e.data.record.Cantidad);
-        $('#unidadMedida').val(e.data.record.unidadMedida);
-        $('#descripcion').val(e.data.record.descripcion);
-        $('#condicion').val(e.data.record.condicion);
-        $('#activoFijo').val(e.data.record.activoFijo);
-        $('#dialog').dialog('open');
-        $('#button').show();
-    }
-
-    function Delete(e) {
-        if (confirm('¿esta seguro que desea eliminar este registro?')) {
-            grid.removeRow(e.data.id);
-            if(grid.count()!=0){
-                $('#button').show();
-            }else{
-                $('#button').hide();
-            }
-        }
-    }
-})
