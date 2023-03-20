@@ -14,6 +14,10 @@ $(document).ready(function () {
     const app = firebase.initializeApp(firebaseConfig);
     console.log(app);
 
+    
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
+
 
     //**********Registrar Usuarios*************//
     //Seleccionando el boton registrar

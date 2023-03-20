@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     const firebaseConfig = {
@@ -16,18 +17,19 @@ $(document).ready(function () {
 
     const db = firebase.firestore();
 
-    //**********Registrar Usuarios*************//
+    //***Registrar Usuarios****//
     //Seleccionando el boton registrar
     $("#btn-register").click(function () {
         //Capturar el Email y el Password
-        let username = $("#userName").val();
+        let userName = $("#userName").val();
+        let email = $("#email").val();
         let password1 = $("#password").val();
 
         //  console.log(username, password1); //comprobamos si captura datos
 
 
         //Método de firebase que registra usuarios
-        firebase.auth().createUserWithEmailAndPassword(username, password1)
+        firebase.auth().createUserWithEmailAndPassword(email, password1)
             .then((userCredential) => {
                 // Signed in
 
@@ -40,6 +42,7 @@ $(document).ready(function () {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = "index.html";
+                        addNombre(userName)
                     }
                 })
             })
@@ -65,11 +68,12 @@ $(document).ready(function () {
     $("#btn-login").click(function () {
 
         //Capturar el Email y el Password
-        let username = $("#userName").val();
+        let userName = $("#userName").val();
+        // let email = $("#email").val();
         let password1 = $("#password").val();
 
 
-        firebase.auth().signInWithEmailAndPassword(username, password1)
+        firebase.auth().signInWithEmailAndPassword(userName, password1)
             .then((userCredential) => {
                 // Signed in
 
@@ -116,7 +120,7 @@ $(document).ready(function () {
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "index.html";
+                    window.location.href = "index.html"
                     Swal.fire(
                         'Deleted!',
                         'Your file has been deleted.',
@@ -129,7 +133,6 @@ $(document).ready(function () {
         })
 
     });
-
 
     //Iniciar sesión con cuenta google
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -172,16 +175,19 @@ $(document).ready(function () {
     $("#publicar").click(function (e) {
         e.preventDefault();
         let am = document.getElementById("a").value;
-        
-        console.log(am);
+
+        // console.log(am);
 
         let formu = document.getElementById("mm");
+        const user = firebase.auth().currentUser;
         // console.log(formu);
 
         // Add a new document with a generated id.
-        db.collection("hola").add({
-            texto: am,
-            
+        db.collection("holaaaa").add({
+            _texto: am,
+            _idUser: user.uid,
+            _nombreUser: user.displayName,
+
         })
             .then((docRef) => {
                 // console.log("Document written with ID: ", docRef.id);
@@ -191,11 +197,46 @@ $(document).ready(function () {
                 console.error("Error adding document: ", error);
             });
 
-            formu.reset();
+        formu.reset();
     })
-    
 
-//
+   
+    //AÑADIR NOMBRE
 
+    function addNombre(nombre) {
+        const user = firebase.auth().currentUser;
+
+        user
+            .updateProfile({
+                displayName: nombre,
+
+            })
+            .then(() => {
+                console.log("se actualizo el nombre");
+
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode, errorMessage);
+            });
+    }
+
+
+    //MANEJO DE SESIONES
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+        
+            var uid = user.uid;
+            var email = user.email;
+            var usuario = user.displayName;
+            console.log(email, usuario, uid);
+            // ...
+        } else {
+            // User is signed out
+            // ...
+        }
+    });
 })
-
