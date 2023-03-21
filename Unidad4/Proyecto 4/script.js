@@ -32,7 +32,7 @@ $(document).ready(function () {
         firebase.auth().createUserWithEmailAndPassword(email, password1)
             .then((userCredential) => {
                 // Signed in
-
+                addNombre(userName);
                 Swal.fire({
                     icon: 'success',
                     title: 'Good job!',
@@ -42,7 +42,7 @@ $(document).ready(function () {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = "index.html";
-                        addNombre(userName)
+
                     }
                 })
             })
@@ -200,7 +200,7 @@ $(document).ready(function () {
         formu.reset();
     })
 
-   
+
     //AÑADIR NOMBRE
 
     function addNombre(nombre) {
@@ -228,17 +228,69 @@ $(document).ready(function () {
         if (user) {
             // User is signed in, see docs for a list of available properties
             // https://firebase.google.com/docs/reference/js/firebase.User
-        
+
             var uid = user.uid;
             var email = user.email;
             var usuario = user.displayName;
             console.log(email, usuario, uid);
+            obtenerDatos();
             // ...
         } else {
             // User is signed out
             // ...
         }
     });
+
+    //MOSTRAR DATOS EN EL HTML
+    function mostrarDatos(data) {
+        const user = firebase.auth().currentUser;
+        if (data.length > 0) {
+            $("#post").empty();
+            let html = "";
+            data.forEach((doc) => {
+                var post = doc.data();
+                console.log("post - ", post);
+                var div = ``;
+                if (user.uid == post._idUser) {
+                    div = `
+          <div class="card card mb-3" style="width: 28rem mt-3 mx-auto" style="max-width: 800px;">
+            <div class="card-body">
+              <p>${post._texto}</p>
+              <p>Publicado por ${post._nombreUser}</p>
+              <button data-id="${doc._idUser}" class="btn btn-success btn-sm">
+                Editar
+              </button>
+              <button data-id="${doc._idUser}" class="btn btn-danger btn-sm">
+                Eliminar
+              </button>
+            </div>
+          </div>
+        `;
+                } else {
+                    div = `
+          <div class="card " style="max-width: 800px;">
+            <div class="card-body">
+              <p>${post._texto}</p>
+              <p>Publicado por ${post._nombreUser}</p>
+            </div>
+          </div>
+        `;
+                }
+
+                html += div;
+            });
+            $("#post").append(html);
+
+        }
+    }
+
+    function obtenerDatos() {
+        db.collection("holaaaa").get().then((querySnapshot) => {
+            mostrarDatos(querySnapshot.docs);
+            
+        });
+
+    }
 })
 
 //////////////////////
