@@ -1,5 +1,3 @@
-.container{
-    background-color: yellow;
-    display: flex;
-    justify-content: space-between;
+.font{
+    font-size: 35px;
 }
