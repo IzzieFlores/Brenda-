@@ -41,7 +41,7 @@ $(document).ready(function () {
                     allowOutsideClick: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "index.html";
+                        window.location.href = "cuenta.html";
 
                     }
                 })
@@ -85,7 +85,7 @@ $(document).ready(function () {
                     allowOutsideClick: true
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = "home.html";
+                        window.location.href = "index.html";
                     }
                 })
                 // ...
@@ -106,7 +106,7 @@ $(document).ready(function () {
     });
 
     //Cerrar Sesión
-    $("#boton-cerrar").click(function () {
+    $("#cerrar").click(function () {
 
         firebase.auth().signOut().then(() => {
 
@@ -156,7 +156,7 @@ $(document).ready(function () {
                 // ...
                 console.log(token, user);
 
-                window.location.href = "home.html";
+                window.location.href = "index.html";
             }).catch((error) => {
 
                 // Handle Errors here.
@@ -235,8 +235,10 @@ $(document).ready(function () {
             var email = user.email;
             var usuario = user.displayName;
             console.log(email, usuario, uid);
-            obtenerDatos();
-            infoUser();
+            // obtenerDatos();
+            // infoUser();
+            var aa= '<i class="fa-solid fa-arrow-right-from-bracket font" id="cerrar"></i>';
+            $(".exit-icon").append(aa);
 
             // ...
         } else {
@@ -246,90 +248,90 @@ $(document).ready(function () {
     });
 
     //MOSTRAR DATOS EN EL HTML
-    function mostrarDatos(data) {
-        const user = firebase.auth().currentUser;
-        if (data.length > 0) {
-            $("#post").empty();
-            let html = "";
-            data.forEach((doc) => {
-                var post = doc.data();
-                console.log("post - ", post);
-                var div = ``;
-                if (user.uid == post._idUser) {
-                    div = `
-          <div class="card card mb-3" style="width: 28rem mt-3 mx-auto" style="max-width: 800px;">
-            <div class="card-body ">
-              <p class="fst-italic">${post._texto}</p>
-              <p class="fst-italic">Publicado por ${post._nombreUser}</p>
-              <button data-id="${doc._idUser}" class="btn btn-success btn-sm">
-                Editar
-              </button>
-              <button data-id="${doc._idUser}" class="btn btn-danger btn-sm">
-                Eliminar
-              </button>
-            </div>
-          </div>
-        `;
-                } else {
-                    div = `
-          <div class="card " style="max-width: 800px;">
-            <div class="card-body">
-              <p class="fst-italic">${post._texto}</p>
-              <p class="fst-italic">Publicado por ${post._nombreUser}</p>
-            </div>
-          </div>
-        `;
-                }
+    // function mostrarDatos(data) {
+    //     const user = firebase.auth().currentUser;
+    //     if (data.length > 0) {
+    //         $("#post").empty();
+    //         let html = "";
+    //         data.forEach((doc) => {
+    //             var post = doc.data();
+    //             console.log("post - ", post);
+    //             var div = ``;
+    //             if (user.uid == post._idUser) {
+    //                 div = `
+    //       <div class="card card mb-3" style="width: 28rem mt-3 mx-auto" style="max-width: 800px;">
+    //         <div class="card-body ">
+    //           <p class="fst-italic">${post._texto}</p>
+    //           <p class="fst-italic">Publicado por ${post._nombreUser}</p>
+    //           <button data-id="${doc._idUser}" class="btn btn-success btn-sm">
+    //             Editar
+    //           </button>
+    //           <button data-id="${doc._idUser}" class="btn btn-danger btn-sm">
+    //             Eliminar
+    //           </button>
+    //         </div>
+    //       </div>
+    //     `;
+    //             } else {
+    //                 div = `
+    //       <div class="card " style="max-width: 800px;">
+    //         <div class="card-body">
+    //           <p class="fst-italic">${post._texto}</p>
+    //           <p class="fst-italic">Publicado por ${post._nombreUser}</p>
+    //         </div>
+    //       </div>
+    //     `;
+    //             }
 
-                html += div;
-            });
-            $("#post").append(html);
+    //             html += div;
+    //         });
+    //         $("#post").append(html);
 
-        }
-    }
+    //     }
+    // }
 
-    function obtenerDatos() {
-        db.collection("holaaaa").get().then((querySnapshot) => {
-            mostrarDatos(querySnapshot.docs);
+    // function obtenerDatos() {
+    //     db.collection("holaaaa").get().then((querySnapshot) => {
+    //         mostrarDatos(querySnapshot.docs);
             
-        });
+    //     });
 
-    }
+    // }
 
      // MOSTRAR INFORMACION DEL USUARIO
-  function infoUser() {
+//   function infoUser() {
 
-    const user = firebase.auth().currentUser;
-    console.log("HOLA MUNDO", user);
-    var html = "";
+//     const user = firebase.auth().currentUser;
+//     console.log("HOLA MUNDO", user);
+//     var html = "";
 
-    if (user !== null) {
-      var displayName = user.displayName;
-      var email = user.email;
-      var fotoURL = "";
+//     if (user !== null) {
+//       var displayName = user.displayName;
+//       var email = user.email;
+//       var fotoURL = "";
 
-      if (user.photoURL != null) {
-        fotoURL = user.photoURL;
-      } else {
-        fotoURL = "img/userdefault.png";
-      }
+//       if (user.photoURL != null) {
+//         fotoURL = user.photoURL;
+//       } else {
+//         fotoURL = "img/userdefault.png";
+//       }
 
-      html = `
-        <div>
-            <div>
-                <img id="userPhoto" src="${fotoURL}" style="width: 100px;">
-            </div>
-            <div>
-                <h3>${displayName}</h3>
-                <h4>${email}</h4>
-            </div>
-        </div>
-      `;
-      $("#userInfo").append(html);
-    } else {
-      console.log("error SOS");
-    }
-  }
+//       html = `
+//         <div>
+//             <div>
+//                 <img id="userPhoto" src="${fotoURL}" style="width: 100px;">
+//             </div>
+//             <div>
+//                 <h3>${displayName}</h3>
+//                 <h4>${email}</h4>
+//             </div>
+//         </div>
+//       `;
+//       $("#userInfo").append(html);
+//     } else {
+//       console.log("error SOS");
+//     }
+//   }
 })
 
 //////////////////////
