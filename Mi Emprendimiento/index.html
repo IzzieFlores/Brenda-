@@ -18,6 +18,9 @@
 </head>
 
 <body>
+  <footer style="background-color: yellow;" class="text-center">
+    <p>Pedidos y Consultas: <strong>987546198 / 912865449</strong></p>
+  </footer>
   <header>
 
 
@@ -95,18 +98,18 @@
               <a href="cuenta.html">
                 <img src="img/usuario.png" alt=".." width="35">
               </a>
-              <a href="cuenta.html">
+              <!-- <a href="cuenta.html">
                 <img src="img/usuario.png" alt=".." width="35">
-              </a>
+              </a> -->
             </li>
 
             <li class="nav-item">
               <img src="img/bolsa-de-la-compra.png" alt=".." width="35">
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <button class="exit-icon" id="cerrar" style="border: white;"></button>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <button class="exit-icon" id="cerrar" style="border: white;"></button>
@@ -114,7 +117,7 @@
           </ul>
         </div>
       </div>
-    </nav> 
+    </nav>
     <hr>
 
 
@@ -169,9 +172,146 @@
   <main>
     <div class="hols">
       <h3>Tus marcas favoritas están en DoCat</h3>
-      <button type="button" class="btn btn-outline-primary">Perros</button>
-      <button type="button" class="btn btn-outline-primary">Gatos</button>
       <hr>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+            type="button" role="tab" aria-controls="pills-home" aria-selected="true">Perros</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+            type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Gatos</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+          tabindex="0">
+          <a href="#" class="m-5">
+            <img src="img/1.jpg" alt="..." width="130">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/2.jpg" alt="..." width="120">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/3.jpg" alt="..." width="120">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/4.jpg" alt="..." width="120">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/5.jpg" alt="..." width="120">
+          </a>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+          <a href="#" class="m-5">
+            <img src="img/11.jpg" alt="..." width="130">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/22.jpg" alt="..." width="120">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/33.jpg" alt="..." width="120">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/44.jpg" alt="..." width="120">
+          </a>
+          <a href="#" class="m-5">
+            <img src="img/55.jpg" alt="..." width="120">
+          </a>
+        </div>
+        <hr>
+      </div>
+    </div>
+
+    <div class="hols">
+      <h3>Destacado para ti</h3>
+      <div class="row ">
+        <div class="col-3">
+          <div class="card pp border border-0">
+            <a href="#">
+              <img src="img/dogx 1.jpg" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <p class="card-title fs-6 fw-bold text-center">Dogxtreme Adulto Salmón</p>
+              <div class="fw-bold text-center" >
+                <p>
+                  12kg <span style="color: red; margin-left: 50px;">S/. 200.90</span>
+                </p>
+                <p>
+                  3kg <span style="color: red;  margin-left: 50px;">S/. 59.90</span>
+                </p>
+
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card pp border border-0">
+            <a href="#">
+              <img src="img/catx 2.jpg" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title fs-6 fw-bold text-center">Catxtreme Adulto Esterilizado Salmón</h5>
+              <div class="fw-bold text-center" >
+                <p>
+                  6kg <span style="color: red; margin-left: 50px;">S/. 139.90</span>
+                </p>
+                <p>
+                  2.5kg <span style="color: red;  margin-left: 50px;">S/. 69.90</span>
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card pp border border-0">
+            <a href="#">
+              <img src="img/equilibrio 3.jpg" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title fs-6 fw-bold text-center">Equilibrio Puppies All Breeds - Cachorros - Todas las razas</h5>
+              <div class="fw-bold text-center" >
+                <p>
+                  15kg <span style="color: red; margin-left: 50px;">S/. 384.90</span>
+                </p>
+                <p>
+                  2kg <span style="color: red;  margin-left: 50px;">S/. 74.90</span>
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card pp border border-0">
+            <a href="#">
+              <img src="img/canbo 4.jpg" class="card-img-top" alt="...">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title fs-6 fw-bold text-center">Canbo Cuidado de Esterilizados / Sterilized Care</h5>
+              <div class="fw-bold text-center" >
+                <p>
+                  7kg <span style="color: red; margin-left: 50px;">S/. 155.90</span>
+                </p>
+                <p>
+                  3kg <span style="color: red;  margin-left: 50px;">S/. 77.90</span>
+                </p>
+                <p>
+                  1kg <span style="color: red;  margin-left: 50px;">S/. 31.90</span>
+                </p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </main>

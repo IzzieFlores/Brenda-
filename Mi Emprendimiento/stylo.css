@@ -20,3 +20,12 @@
     margin-top: 3%;
     margin-right: 20%;
 }
+
+.pp{
+    width: 220px;
+}
+
+.yyy{
+    display: flex;
+    gap: 10px;
+}
